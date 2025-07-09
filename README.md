@@ -1,4 +1,4 @@
-# MCQ Generator with LangChain & Streamlit
+# MCQ Generator with LangChain 🦜⛓️ & Streamlit
 
 This project is an interactive web application for generating and practicing Multiple Choice Questions (MCQs) from PDF or text files using OpenAI's GPT models and LangChain. The app allows users to upload study material, generate MCQs, answer them, and receive instant feedback and explanations.
 
