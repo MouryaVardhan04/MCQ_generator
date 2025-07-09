@@ -3,78 +3,128 @@ import json
 import traceback
 import pandas as pd
 from dotenv import load_dotenv
-from src.mcq_generator.utils import read_file,get_table_data
 import streamlit as st
+import re
+
 from langchain.callbacks import get_openai_callback
+from src.mcq_generator.utils import read_file
 from src.mcq_generator.MCQGenerator import generate_evaluate_chain
 from src.mcq_generator.logger import logging
 
-#loading json file
-
+# Load predefined response JSON structure
 with open('Response.json', 'r') as file:
     RESPONSE_JSON = json.load(file)
 
-#creating a title for the app
+# Set app title
 st.title("MCQs Creator Application with LangChain 🦜⛓️")
 
-#Create a form using st.form
+# Initialize session state for quiz and response if not set
+if "quiz" not in st.session_state:
+    st.session_state.quiz = None
+    st.session_state.response = None
+
+# Input form
 with st.form("user_inputs"):
-    #File Upload
-    uploaded_file=st.file_uploader("Uplaod a PDF or txt file")
+    uploaded_file = st.file_uploader("Upload a PDF or TXT file")
+    mcq_count = st.number_input("No. of MCQs", min_value=3, max_value=50)
+    subject = st.text_input("Insert Subject", max_chars=20)
+    tone = st.text_input("Complexity Level Of Questions", max_chars=20, placeholder="Simple")
+    button = st.form_submit_button("Create MCQs")
 
-    #Input Fields
-    mcq_count=st.number_input("No. of MCQs", min_value=3, max_value=50)
-
-    #Subject
-    subject=st.text_input("Insert Subject",max_chars=20)
-
-    # Quiz Tone
-    tone=st.text_input("Complexity Level Of Questions", max_chars=20, placeholder="Simple")
-
-    #Add Button
-    button=st.form_submit_button("Create MCQs")
-
-    # Check if the button is clicked and all fields have input
-
-    if button and uploaded_file is not None and mcq_count and subject and tone:
-        with st.spinner("loading..."):
+# Generate quiz only if it hasn't been generated
+if st.session_state.quiz is None:
+    if button and uploaded_file and mcq_count and subject and tone:
+        with st.spinner("Generating MCQs..."):
             try:
-                text=read_file(uploaded_file)
-                #Count tokens and the cost of API call
+                text = read_file(uploaded_file)
+
                 with get_openai_callback() as cb:
-                    response=generate_evaluate_chain(
-                        {
+                    response = generate_evaluate_chain({
                         "text": text,
                         "number": mcq_count,
-                        "subject":subject,
+                        "subject": subject,
                         "tone": tone,
                         "response_json": json.dumps(RESPONSE_JSON)
-                            }
-                    )
-                #st.write(response)
+                    })
 
             except Exception as e:
                 traceback.print_exception(type(e), e, e.__traceback__)
-                st.error("Error")
-
+                st.error("❌ Something went wrong during MCQ generation.")
             else:
-                print(f"Total Tokens:{cb.total_tokens}")
-                print(f"Prompt Tokens:{cb.prompt_tokens}")
-                print(f"Completion Tokens:{cb.completion_tokens}")
-                print(f"Total Cost:{cb.total_cost}")
-                if isinstance(response, dict):
-                    #Extract the quiz data from the response
-                    quiz=response.get("quiz", None)
-                    if quiz is not None:
-                        table_data=get_table_data(quiz)
-                        if table_data is not None:
-                            df=pd.DataFrame(table_data)
-                            df.index=df.index+1
-                            st.table(df)
-                            #Display the review in atext box as well
-                            st.text_area(label="Review", value=response["review"])
-                        else:
-                            st.error("Error in the table data")
+                quiz = response.get("quiz", {})
 
-                else:
-                    st.write(response)
+                if isinstance(quiz, str):
+                    match = re.search(r'({.*})', quiz, re.DOTALL)
+                    if match:
+                        quiz_json_str = match.group(1)
+                        try:
+                            quiz = json.loads(quiz_json_str)
+                        except:
+                            st.error("Failed to parse quiz JSON.")
+                            quiz = {}
+                    else:
+                        st.error("No valid quiz JSON found.")
+                        quiz = {}
+
+                # Save quiz and response to session state
+                st.session_state.quiz = quiz
+                st.session_state.response = response
+
+# Display quiz if already generated
+if st.session_state.quiz:
+    quiz = st.session_state.quiz
+    response = st.session_state.response
+    user_answers = {}
+
+    st.subheader("📝 Answer the following MCQs:")
+
+    for key, item in quiz.items():
+        question_number = int(key)
+        st.markdown(f"### Q{question_number}: {item['mcq']}")
+        options = item["options"]
+        option_labels = [f"{k.upper()}: {v}" for k, v in options.items()]
+        selected_option = st.radio(
+            "Choose an option:",
+            option_labels,
+            key=f"radio_{question_number}"
+        )
+        # Save selected option key (a/b/c/d) in lowercase
+        user_answers[key] = selected_option.split(":")[0].strip().lower()
+
+    if "submitted" not in st.session_state:
+        st.session_state.submitted = False
+
+    if not st.session_state.submitted:
+        if st.button("Submit Answers"):
+            st.session_state.submitted = True
+
+    if st.session_state.submitted:
+        score = 0
+        st.subheader("📊 Results")
+        for key, item in quiz.items():
+            selected_key = user_answers.get(key)
+            correct_key = item["correct"].strip().lower()
+            correct_text = item["options"].get(correct_key, "Unknown")
+
+            if selected_key == correct_key:
+                st.success(f"Q{key}: ✅ Correct Answer!")
+                score += 1
+            else:
+                st.error(f"Q{key}: ❌ Wrong Answer!\n\n**Correct Answer:** {correct_key.upper()}: {correct_text}")
+
+            st.markdown(f"**Explanation:** {item['explain']}")
+            st.markdown("---")
+
+        st.info(f"🎯 Your Score: {score}/{len(quiz)}")
+
+        # Optional Review
+        if "review" in response:
+            st.text_area("Review", value=response["review"], height=150)
+
+# Optional: Clear state button to reset
+if st.session_state.quiz:
+    if st.button("🔄 Start Over"):
+        st.session_state.quiz = None
+        st.session_state.response = None
+        st.session_state.submitted = False
+        st.experimental_rerun()
