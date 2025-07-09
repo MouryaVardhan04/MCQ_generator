@@ -1,77 +1,84 @@
-For the journal, see Machine Learning (journal).
-"Statistical learning" redirects here. For statistical learning in linguistics, see Statistical learning in language acquisition.
-Part of a series on
-Machine learning
-and data mining
-Paradigms
-Problems
-Supervised learning
-(classification • regression)
-Clustering
-Dimensionality reduction
-Structured prediction
-Anomaly detection
-Neural networks
-Reinforcement learning
-Learning with humans
-Model diagnostics
-Mathematical foundations
-Journals and conferences
-Related articles
-vte
-Part of a series on
-Artificial intelligence (AI)
+"Biological" redirects here. For other uses, see Biological (disambiguation) and Biology (disambiguation).
 
-Major goals
-Artificial general intelligenceIntelligent agentRecursive self-improvementPlanningComputer visionGeneral game playingKnowledge representationNatural language processingRoboticsAI safety
-Approaches
+
+
+
+
+
+Clockwise from upper left: A Nile crocodile, the common sunflower, Escherichia coli, Amoeba proteus, the fruit fly, and Sarcoscypha coccinea
+Part of a series on
+Biology
+
+IndexOutlineGlossary
+History (timeline)
+Key components
+Branches
+Research
 Applications
-Philosophy
-History
-Glossary
+icon Biology portal Category
 vte
-Machine learning (ML) is a field of study in artificial intelligence concerned with the development and study of statistical algorithms that can learn from data and generalise to unseen data, and thus perform tasks without explicit instructions.[1] Within a subdiscipline in machine learning, advances in the field of deep learning have allowed neural networks, a class of statistical algorithms, to surpass many previous machine learning approaches in performance.[2]
+Biology is the scientific study of life and living organisms. It is a broad natural science that encompasses a wide range of fields and unifying principles that explain the structure, function, growth, origin, evolution, and distribution of life. Central to biology are five fundamental themes: the cell as the basic unit of life, genes and heredity as the basis of inheritance, evolution as the driver of biological diversity, energy transformation for sustaining life processes, and the maintenance of internal stability (homeostasis).[1][2]
 
-ML finds application in many fields, including natural language processing, computer vision, speech recognition, email filtering, agriculture, and medicine.[3][4] The application of ML to business problems is known as predictive analytics.
+Biology examines life across multiple levels of organization, from molecules and cells to organisms, populations, and ecosystems. Subdisciplines include molecular biology, physiology, ecology, evolutionary biology, developmental biology, and systematics, among others. Each of these fields applies a range of methods to investigate biological phenomena, including observation, experimentation, and mathematical modeling. Modern biology is grounded in the theory of evolution by natural selection, first articulated by Charles Darwin, and in the molecular understanding of genes encoded in DNA. The discovery of the structure of DNA and advances in molecular genetics have transformed many areas of biology, leading to applications in medicine, agriculture, biotechnology, and environmental science.
 
-Statistics and mathematical optimisation (mathematical programming) methods comprise the foundations of machine learning. Data mining is a related field of study, focusing on exploratory data analysis (EDA) via unsupervised learning.[6][7]
+Life on Earth is believed to have originated over 3.7 billion years ago.[3] Today, it includes a vast diversity of organisms—from single-celled archaea and bacteria to complex multicellular plants, fungi, and animals. Biologists classify organisms based on shared characteristics and evolutionary relationships, using taxonomic and phylogenetic frameworks. These organisms interact with each other and with their environments in ecosystems, where they play roles in energy flow and nutrient cycling. As a constantly evolving field, biology incorporates new discoveries and technologies that enhance the understanding of life and its processes, while contributing to solutions for challenges such as disease, climate change, and biodiversity loss.
 
-From a theoretical viewpoint, probably approximately correct learning provides a framework for describing machine learning.
+Etymology
+From Greek bios, life, (from Proto-Indo-European root *gwei-, to live) and logy, study of. The compound was coined in 1800 by Karl Friedrich Burdach and in 1802 used by both German naturalist Gottfried Reinhold Treviranus and Jean-Baptiste Lamarck.[4]
 
 History
-See also: Timeline of machine learning
-The term machine learning was coined in 1959 by Arthur Samuel, an IBM employee and pioneer in the field of computer gaming and artificial intelligence.[8][9] The synonym self-teaching computers was also used in this time period.[10][11]
+Main article: History of biology
 
-The earliest machine learning program was introduced in the 1950s when Arthur Samuel invented a computer program that calculated the winning chance in checkers for each side, but the history of machine learning roots back to decades of human desire and effort to study human cognitive processes.[12] In 1949, Canadian psychologist Donald Hebb published the book The Organization of Behavior, in which he introduced a theoretical neural structure formed by certain interactions among nerve cells.[13] Hebb's model of neurons interacting with one another set a groundwork for how AIs and machine learning algorithms work under nodes, or artificial neurons used by computers to communicate data.[12] Other researchers who have studied human cognitive systems contributed to the modern machine learning technologies as well, including logician Walter Pitts and Warren McCulloch, who proposed the early mathematical models of neural networks to come up with algorithms that mirror human thought processes.[12]
+Drawing of what now are called Schwann cells by one of the founders of cell theory, Theodor Schwann.
+The earliest of roots of science, which included medicine, can be traced to ancient Egypt and Mesopotamia in around 3000 to 1200 BCE.[5][6] Their contributions shaped ancient Greek natural philosophy.[7][5][6][8][9] Ancient Greek philosophers such as Aristotle (384–322 BCE) contributed extensively to the development of biological knowledge.[10] He explored biological causation and the diversity of life. His successor, Theophrastus, began the scientific study of plants.[11] Scholars of the medieval Islamic world who wrote on biology included al-Jahiz (781–869), Al-Dīnawarī (828–896), who wrote on botany,[12] and Rhazes (865–925) who wrote on anatomy and physiology. Medicine was especially well studied by Islamic scholars working in Greek philosopher traditions, while natural history drew heavily on Aristotelian thought.
 
-By the early 1960s, an experimental "learning machine" with punched tape memory, called Cybertron, had been developed by Raytheon Company to analyse sonar signals, electrocardiograms, and speech patterns using rudimentary reinforcement learning. It was repetitively "trained" by a human operator/teacher to recognise patterns and equipped with a "goof" button to cause it to reevaluate incorrect decisions.[14] A representative book on research into machine learning during the 1960s was Nilsson's book on Learning Machines, dealing mostly with machine learning for pattern classification.[15] Interest related to pattern recognition continued into the 1970s, as described by Duda and Hart in 1973.[16] In 1981 a report was given on using teaching strategies so that an artificial neural network learns to recognise 40 characters (26 letters, 10 digits, and 4 special symbols) from a computer terminal.[17]
+Biology began to quickly develop with Anton van Leeuwenhoek's dramatic improvement of the microscope. It was then that scholars discovered spermatozoa, bacteria, infusoria and the diversity of microscopic life. Investigations by Jan Swammerdam led to new interest in entomology and helped to develop techniques of microscopic dissection and staining.[13] Advances in microscopy had a profound impact on biological thinking. In the early 19th century, biologists pointed to the central importance of the cell. In 1838, Schleiden and Schwann began promoting the now universal ideas that (1) the basic unit of organisms is the cell and (2) that individual cells have all the characteristics of life, although they opposed the idea that (3) all cells come from the division of other cells, continuing to support spontaneous generation. However, Robert Remak and Rudolf Virchow were able to reify the third tenet, and by the 1860s most biologists accepted all three tenets which consolidated into cell theory.[14][15]
 
-Tom M. Mitchell provided a widely quoted, more formal definition of the algorithms studied in the machine learning field: "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E."[18] This definition of the tasks in which machine learning is concerned offers a fundamentally operational definition rather than defining the field in cognitive terms. This follows Alan Turing's proposal in his paper "Computing Machinery and Intelligence", in which the question "Can machines think?" is replaced with the question "Can machines do what we (as thinking entities) can do?".[19]
+Meanwhile, taxonomy and classification became the focus of natural historians. Carl Linnaeus published a basic taxonomy for the natural world in 1735, and in the 1750s introduced scientific names for all his species.[16] Georges-Louis Leclerc, Comte de Buffon, treated species as artificial categories and living forms as malleable—even suggesting the possibility of common descent.[17]
 
-Modern-day machine learning has two objectives. One is to classify data based on models which have been developed; the other purpose is to make predictions for future outcomes based on these models. A hypothetical algorithm specific to classifying data may use computer vision of moles coupled with supervised learning in order to train it to classify the cancerous moles. A machine learning algorithm for stock trading may inform the trader of future potential predictions.[20]
 
-Relationships to other fields
-Artificial intelligence
+In 1842, Charles Darwin penned his first sketch of On the Origin of Species.[18]
+Serious evolutionary thinking originated with the works of Jean-Baptiste Lamarck, who presented a coherent theory of evolution.[19] The British naturalist Charles Darwin, combining the biogeographical approach of Humboldt, the uniformitarian geology of Lyell, Malthus's writings on population growth, and his own morphological expertise and extensive natural observations, forged a more successful evolutionary theory based on natural selection; similar reasoning and evidence led Alfred Russel Wallace to independently reach the same conclusions.[20][21]
 
-Deep learning is a subset of machine learning, which is itself a subset of artificial intelligence.[21]
-As a scientific endeavour, machine learning grew out of the quest for artificial intelligence (AI). In the early days of AI as an academic discipline, some researchers were interested in having machines learn from data. They attempted to approach the problem with various symbolic methods, as well as what were then termed "neural networks"; these were mostly perceptrons and other models that were later found to be reinventions of the generalised linear models of statistics.[22] Probabilistic reasoning was also employed, especially in automated medical diagnosis.[23]: 488 
+The basis for modern genetics began with the work of Gregor Mendel in 1865.[22] This outlined the principles of biological inheritance.[23] However, the significance of his work was not realized until the early 20th century when evolution became a unified theory as the modern synthesis reconciled Darwinian evolution with classical genetics.[24] In the 1940s and early 1950s, a series of experiments by Alfred Hershey and Martha Chase pointed to DNA as the component of chromosomes that held the trait-carrying units that had become known as genes. A focus on new kinds of model organisms such as viruses and bacteria, along with the discovery of the double-helical structure of DNA by James Watson and Francis Crick in 1953, marked the transition to the era of molecular genetics. From the 1950s onwards, biology has been vastly extended in the molecular domain. The genetic code was cracked by Har Gobind Khorana, Robert W. Holley and Marshall Warren Nirenberg after DNA was understood to contain codons. The Human Genome Project was launched in 1990 to map the human genome.[25]
 
-However, an increasing emphasis on the logical, knowledge-based approach caused a rift between AI and machine learning. Probabilistic systems were plagued by theoretical and practical problems of data acquisition and representation.[23]: 488  By 1980, expert systems had come to dominate AI, and statistics was out of favour.[24] Work on symbolic/knowledge-based learning did continue within AI, leading to inductive logic programming(ILP), but the more statistical line of research was now outside the field of AI proper, in pattern recognition and information retrieval.[23]: 708–710, 755  Neural networks research had been abandoned by AI and computer science around the same time. This line, too, was continued outside the AI/CS field, as "connectionism", by researchers from other disciplines including John Hopfield, David Rumelhart, and Geoffrey Hinton. Their main success came in the mid-1980s with the reinvention of backpropagation.[23]: 25 
+Chemical basis
+Atoms and molecules
+Further information: Chemistry
+All organisms are made up of chemical elements;[26] oxygen, carbon, hydrogen, and nitrogen account for most (96%) of the mass of all organisms, with calcium, phosphorus, sulfur, sodium, chlorine, and magnesium constituting essentially all the remainder. Different elements can combine to form compounds such as water, which is fundamental to life.[26] Biochemistry is the study of chemical processes within and relating to living organisms. Molecular biology is the branch of biology that seeks to understand the molecular basis of biological activity in and between cells, including molecular synthesis, modification, mechanisms, and interactions.
 
-Machine learning (ML), reorganised and recognised as its own field, started to flourish in the 1990s. The field changed its goal from achieving artificial intelligence to tackling solvable problems of a practical nature. It shifted focus away from the symbolic approaches it had inherited from AI, and toward methods and models borrowed from statistics, fuzzy logic, and probability theory.[24]
+Water
+See also: Planetary habitability, Circumstellar habitable zone, and Water distribution on Earth
 
-Data compression
-This section is an excerpt from Data compression § Machine learning.[edit]
-There is a close connection between machine learning and compression. A system that predicts the posterior probabilities of a sequence given its entire history can be used for optimal data compression (by using arithmetic coding on the output distribution). Conversely, an optimal compressor can be used for prediction (by finding the symbol that compresses best, given the previous history). This equivalence has been used as a justification for using data compression as a benchmark for "general intelligence".[25][26][27]
+Model of hydrogen bonds (1) between molecules of water
+Life arose from the Earth's first ocean, which formed some 3.8 billion years ago.[27] Since then, water continues to be the most abundant molecule in every organism. Water is important to life because it is an effective solvent, capable of dissolving solutes such as sodium and chloride ions or other small molecules to form an aqueous solution. Once dissolved in water, these solutes are more likely to come in contact with one another and therefore take part in chemical reactions that sustain life.[27] In terms of its molecular structure, water is a small polar molecule with a bent shape formed by the polar covalent bonds of two hydrogen (H) atoms to one oxygen (O) atom (H2O).[27] Because the O–H bonds are polar, the oxygen atom has a slight negative charge and the two hydrogen atoms have a slight positive charge.[27] This polar property of water allows it to attract other water molecules via hydrogen bonds, which makes water cohesive.[27] Surface tension results from the cohesive force due to the attraction between molecules at the surface of the liquid.[27] Water is also adhesive as it is able to adhere to the surface of any polar or charged non-water molecules.[27] Water is denser as a liquid than it is as a solid (or ice).[27] This unique property of water allows ice to float above liquid water such as ponds, lakes, and oceans, thereby insulating the liquid below from the cold air above.[27] Water has the capacity to absorb energy, giving it a higher specific heat capacity than other solvents such as ethanol.[27] Thus, a large amount of energy is needed to break the hydrogen bonds between water molecules to convert liquid water into water vapor.[27] As a molecule, water is not completely stable as each water molecule continuously dissociates into hydrogen and hydroxyl ions before reforming into a water molecule again.[27] In pure water, the number of hydrogen ions balances (or equals) the number of hydroxyl ions, resulting in a pH that is neutral.
 
-An alternative view can show compression algorithms implicitly map strings into implicit feature space vectors, and compression-based similarity measures compute similarity within these feature spaces. For each compressor C(.) we define an associated vector space ℵ, such that C(.) maps an input string x, corresponding to the vector norm ||~x||. An exhaustive examination of the feature spaces underlying all compression algorithms is precluded by space; instead, feature vectors chooses to examine three representative lossless compression methods, LZW, LZ77, and PPM.[28]
+Organic compounds
+Further information: Organic chemistry
 
-According to AIXI theory, a connection more directly explained in Hutter Prize, the best possible compression of x is the smallest possible software that generates x. For example, in that model, a zip file's compressed size includes both the zip file and the unzipping software, since you can not unzip it without both, but there may be an even smaller combined form.
+Organic compounds such as glucose are vital to organisms.
+Organic compounds are molecules that contain carbon bonded to another element such as hydrogen.[27] With the exception of water, nearly all the molecules that make up each organism contain carbon.[27][28] Carbon can form covalent bonds with up to four other atoms, enabling it to form diverse, large, and complex molecules.[27][28] For example, a single carbon atom can form four single covalent bonds such as in methane, two double covalent bonds such as in carbon dioxide (CO2), or a triple covalent bond such as in carbon monoxide (CO). Moreover, carbon can form very long chains of interconnecting carbon–carbon bonds such as octane or ring-like structures such as glucose.
 
-Examples of AI-powered audio/video compression software include NVIDIA Maxine, AIVC.[29] Examples of software that can perform AI-powered image compression include OpenCV, TensorFlow, MATLAB's Image Processing Toolbox (IPT) and High-Fidelity Generative Image Compression.[30]
+The simplest form of an organic molecule is the hydrocarbon, which is a large family of organic compounds that are composed of hydrogen atoms bonded to a chain of carbon atoms. A hydrocarbon backbone can be substituted by other elements such as oxygen (O), hydrogen (H), phosphorus (P), and sulfur (S), which can change the chemical behavior of that compound.[27] Groups of atoms that contain these elements (O-, H-, P-, and S-) and are bonded to a central carbon atom or skeleton are called functional groups.[27] There are six prominent functional groups that can be found in organisms: amino group, carboxyl group, carbonyl group, hydroxyl group, phosphate group, and sulfhydryl group.[27]
 
-In unsupervised machine learning, k-means clustering can be utilized to compress data by grouping similar data points into clusters. This technique simplifies handling extensive datasets that lack predefined labels and finds widespread use in fields such as image compression.[31]
+In 1953, the Miller–Urey experiment showed that organic compounds could be synthesized abiotically within a closed system mimicking the conditions of early Earth, thus suggesting that complex organic molecules could have arisen spontaneously in early Earth (see abiogenesis).[29][27]
 
-Data compression aims to reduce the size of data files, enhancing storage efficiency and speeding up data transmission. K-means clustering, an unsupervised machine learning algorithm, is employed to partition a dataset into a specified number of clusters, k, each represented by the centroid of its points. This process condenses extensive datasets into a more compact set of representative points. Particularly beneficial in image and signal processing, k-means clustering aids in data reduction by replacing groups of data points with their centroids, thereby preserving the core information of the original data while significantly decreasing the required storage space.[32]
+Macromolecules
+Main article: Macromolecule
 
-Large language models (LLMs) are also efficient lossless data compressors on some data sets, as demonstrated by DeepMind's research with the Chinchilla 70B model. Developed by DeepMind, Chinchilla 70B effectively compressed data, outperforming conventional methods such as Portable Network Graphics (PNG) for images and Free Lossless Audio Codec (FLAC) for audio. It achieved compression of image and audio data to 43.4% and 16.4% of their original sizes, respectively. There is, however, some reason to be concerned that the data set used for testing overlaps the LLM training data set, making it possible that the Chinchilla 70B model is only an efficient compression tool on data it has already been trained on.[33][34]
+The (a) primary, (b) secondary, (c) tertiary, and (d) quaternary structures of a hemoglobin protein
+Macromolecules are large molecules made up of smaller subunits or monomers.[30] Monomers include sugars, amino acids, and nucleotides.[31] Carbohydrates include monomers and polymers of sugars.[32] Lipids are the only class of macromolecules that are not made up of polymers. They include steroids, phospholipids, and fats,[31] largely nonpolar and hydrophobic (water-repelling) substances.[33] Proteins are the most diverse of the macromolecules. They include enzymes, transport proteins, large signaling molecules, antibodies, and structural proteins. The basic unit (or monomer) of a protein is an amino acid.[30] Twenty amino acids are used in proteins.[30] Nucleic acids are polymers of nucleotides.[34] Their function is to store, transmit, and express hereditary information.[31]
+
+Cells
+Main article: Cell (biology)
+Cell theory states that cells are the fundamental units of life, that all living things are composed of one or more cells, and that all cells arise from preexisting cells through cell division.[35] Most cells are very small, with diameters ranging from 1 to 100 micrometers and are therefore only visible under a light or electron microscope.[36] There are generally two types of cells: eukaryotic cells, which contain a nucleus, and prokaryotic cells, which do not. Prokaryotes are single-celled organisms such as bacteria, whereas eukaryotes can be single-celled or multicellular. In multicellular organisms, every cell in the organism's body is derived ultimately from a single cell in a fertilized egg.
+
+Cell structure
+
+Structure of an animal cell depicting various organelles
+Every cell is enclosed within a cell membrane that separates its cytoplasm from the extracellular space.[37] A cell membrane consists of a lipid bilayer, including cholesterols that sit between phospholipids to maintain their fluidity at various temperatures. Cell membranes are semipermeable, allowing small molecules such as oxygen, carbon dioxide, and water to pass through while restricting the movement of larger molecules and charged particles such as ions.[38] Cell membranes also contain membrane proteins, including integral membrane proteins that go across the membrane serving as membrane transporters, and peripheral proteins that loosely attach to the outer side of the cell membrane, acting as enzymes shaping the cell.[39] Cell membranes are involved in various cellular processes such as cell adhesion, storing electrical energy, and cell signalling and serve as the attachment surface for several extracellular structures such as a cell wall, glycocalyx, and cytoskeleton.
+
+
+Structure of a plant cell
+Within the cytoplasm of a cell, there are many biomolecules such as proteins and nucleic acids.[40] In addition to biomolecules, eukaryotic cells have specialized structures called organelles that have their own lipid bilayers or are spatially units.[41] These organelles include the cell nucleus, which contains most of the cell's DNA, or mitochondria, which generate adenosine triphosphate (ATP) to power cellular processes. Other organelles such as endoplasmic reticulum and Golgi apparatus play a role in the synthesis and packaging of proteins, respectively. Biomolecules such as proteins can be engulfed by lysosomes, another specialized organelle. Plant cells have additional organelles that distinguish them from animal cells such as a cell wall that provides support for the plant cell, chloroplasts that harvest sunlight energy to produce sugar, and vacuoles that provide storage and structural support as well as being involved in reproduction and breakdown of plant seeds.[41] Eukaryotic cells also have cytoskeleton that is made up of microtubules, intermediate filaments, and microfilaments, all of which provide support for the cell and are involved in the movement of the cell and its organelles.[41] In terms of their structural composition, the microtubules are made up of tubulin (e.g., α-tubulin and β-tubulin) whereas intermediate filaments are made up of fibrous proteins.[41] Microfilaments are made up of actin molecules that interact with other strands of proteins.[41]
+
