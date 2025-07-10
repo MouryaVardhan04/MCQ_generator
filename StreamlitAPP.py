@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import streamlit as st
 import re
 
-from langchain.callbacks import get_openai_callback
+from langchain_community.callbacks.manager import get_openai_callback
 from src.mcq_generator.utils import read_file
 from src.mcq_generator.MCQGenerator import generate_evaluate_chain
 from src.mcq_generator.logger import logging
@@ -91,14 +91,7 @@ if st.session_state.quiz:
         # Save selected option key (a/b/c/d) in lowercase
         user_answers[key] = selected_option.split(":")[0].strip().lower()
 
-    if "submitted" not in st.session_state:
-        st.session_state.submitted = False
-
-    if not st.session_state.submitted:
-        if st.button("Submit Answers"):
-            st.session_state.submitted = True
-
-    if st.session_state.submitted:
+    if st.button("Submit Answers"):
         score = 0
         st.subheader("📊 Results")
         for key, item in quiz.items():
@@ -120,11 +113,3 @@ if st.session_state.quiz:
         # Optional Review
         if "review" in response:
             st.text_area("Review", value=response["review"], height=150)
-
-# Optional: Clear state button to reset
-if st.session_state.quiz:
-    if st.button("🔄 Start Over"):
-        st.session_state.quiz = None
-        st.session_state.response = None
-        st.session_state.submitted = False
-        st.experimental_rerun()
